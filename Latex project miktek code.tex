@@ -1,0 +1,157 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref, color, setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.5in]{geometry}
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\begin{center}
+{\textbf{LaTeX Paper - MA200}}
+
+Due Thursday, Dec. 12
+
+       
+
+
+{\textbf{Austin Sypolt}}
+\end{center}
+
+\vspace{9pt}
+
+ {\bf Theorem 4.8.1 (page 348)}
+
+\bigskip
+
+The general solution of a given {\bf linear first-order differential equation}\\ $y' + F(x)y = G(x)$ can be found by:
+\bigskip
+
+$y = [ e^{-\int F(x) dx} ] * [ \int G(x) * e^{\int F(x) dx } dx + C] $
+
+\bigskip
+
+(Assuming both F(x) and G(x) are continuous functions)
+
+
+\bigskip
+\bigskip
+
+First we should understand the concepts and terms of what we are solving.
+
+\bigskip
+\bigskip
+
+A {\bf first order differential equation} is an equation where there exists a function F(x,y) consisting of two variables (x and y) defined on a region in the x-y plane.
+
+\bigskip
+\bigskip
+
+A {\bf linear differential equation} is a differential equation with a linear polynomial of the form:
+
+
+\[a_0 (x)y + a_1 (x)y' + a_2 (x)y'' + ... + a_n (x)y^n + b(x) = 0 \]
+
+\bigskip
+\bigskip
+
+ \[a_0 (x), ... , a_n (x), b(x) : \] \\(Arbitrary differentiable functions, these do not have to be linear)
+
+\bigskip
+
+\[y', ... , y^n : \] \\ (Successive derivates of the function y with respect to the variable x)
+
+\bigskip
+\bigskip
+
+This is an {\bf ordinary differential equation (ODE)} meaning it contains one or more functions of an independent variable and its derivates. {\bf Partial differential equations} also exist however these are with respect to more than one independent variable and will not be addressed here.
+
+
+Now that we understand what we're working with, let's get into the numbers, or letters... I guess.
+
+\bigskip
+
+$y' + F(x)y = G(x)$ (Here's our linear first order ODE) {\bf Equation 1}
+
+\bigskip
+
+We can use an {\bf integrating factor} to solve for our first order ODE. An integrating factor is a function that can be multipled by an ODE for the purpose of making it integrable.
+
+
+The integrating factor that will be used for linear first order ODE will be:
+
+\bigskip
+
+$e^{\int F(x) dx}$
+
+
+\bigskip
+
+Multiply this factor by all our terms to give:
+
+\bigskip
+
+$y'e^{\int F(x) dx} + F(x)ye^{\int F(x) dx}  = G(x)e^{\int F(x) dx} $
+
+\bigskip
+\bigskip
+
+That's a mess, so instead let's simplify our integrating factor:
+
+\bigskip
+
+I = $e^{\int F(x) dx}$
+
+
+\bigskip
+\bigskip
+
+Now to clean everything up a little bit substitute I for our integrating factor from Equation 1. This is an {\bf exact differential equation}.
+
+\bigskip
+$y'I + F(x)yI  = G(x)I $
+
+\bigskip
+\bigskip
+
+Both sides will be then integrated:
+
+${\int [y'I + F(x)yI] dx} = {\int [G(x)I] dx}$
+
+\bigskip
+
+From the product rule we get $(yI)' = y'I + F(x)yI$ 
+
+This is why our integrating factor was chosen as $e^{\int F(x) dx}$! It can now be integrated easily and rewritten as:
+
+{\bf $yI = {\int [G(x)I]dx + C}$ } {\bf | Equation 2}
+
+
+\bigskip
+
+Wait a second, remember how I = $e^{\int F(x) dx}$ ?
+
+\bigskip
+
+So let's expand Equation 2 with our integrating factor.
+
+\bigskip
+
+$ye^{\int F(x) dx} = {\int [G(x)e^{\int F(x) dx}]dx + C}$ 
+
+\bigskip
+
+Divide both sides by the integrating factor:
+
+$y = [ \int G(x) * e^{\int F(x) dx } dx + C] / [ e^{\int F(x) dx} ] $
+
+\bigskip
+\bigskip
+\begin{center}
+$y = [ e^{-\int F(x) dx} ] * [ \int G(x) * e^{\int F(x) dx } dx + C]$
+
+\end{center}
+
+\raggedleft $\blacksquare$
+
+
+\end{document}

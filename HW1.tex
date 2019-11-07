@@ -1,0 +1,449 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref,color,setspace}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs} % for "\midrule" macro
+\usepackage{lipsum} % for filler text
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\begin{center}
+\large{\textbf{MA 200 -- Homework 1\\ Due Thursday, August 31 }}
+
+\large{\textbf{Austin Sypolt}}
+\end{center}
+
+\vspace{12pt}
+
+For the next three exercises, use the given dictionary to translate each English sentence into sentential logic and each formal sentence into English.
+\begin{center}
+\begin{tabular}{rl}
+C:&Taylor is a college student.\\
+L:&Taylor is a natural leader.\\
+M:&Taylor is a math major.\\
+Q:&Taylor will be qualified for a high-paying job.
+\end{tabular}
+\end{center}
+\noindent\textbf{1.1.4} Taylor is not in college, but she is a natural leader.
+
+\doublespacing
+\textbf{Solution:} $(\sim C)\wedge L$
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.6} $(L\wedge M)\rightarrow Q$
+
+\doublespacing
+\textbf{Solution:} If Taylor is a natural leader and a math major then she will be qualified for a high-paying job.
+
+
+\singlespacing
+\vspace{12pt}
+\newpage
+
+For the next three exercises, use the given dictionary to translate each English sentence into sentential logic and each formal sentence into English. Note that some of these assertions are mathematically true and some are false.
+\begin{center}
+\begin{tabular}{rl}
+B:&A sequence $\{a_n\}$ is bounded.\\
+C:&A sequence $\{a_n\}$ converges.\\
+D:&A sequence $\{a_n\}$ diverges.\\
+M:&A sequence $\{a_n\}$ is monotone.\\
+\end{tabular}
+\end{center}
+\noindent\textbf{1.1.24} A sequence $\{a_n\}$ diverges exactly when  it does not converge.
+
+\doublespacing
+\textbf{Solution:}  $D\leftrightarrow(\sim C)$
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.26} If a sequence $\{a_n\}$ is not bounded and not monotone, then it does not converge.
+
+\doublespacing
+\textbf{Solution:} $(\sim B \wedge \sim M)\rightarrow (\sim C)$
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.32} $\sim[(M\rightarrow B)\vee(B\rightarrow M)]$
+
+\doublespacing
+\textbf{Solution:} If $\{a_n\}$ is not monotone then it is not bounded, or if $\{a_n\}$ is not bounded then it is not monotone.
+
+\singlespacing
+\vspace{12pt}
+\newpage
+
+\noindent\textbf{1.1.44} Translate ``If $H$, then either $I$ or both $K$ and $L$'' into sentential logic.
+
+\doublespacing
+\textbf{Solution:} $H \rightarrow [I \vee (K \wedge L)]$
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.46} Translate ``If $H$, then either $J$ or $K$, but not $L$'' into sentential logic.
+
+\doublespacing
+\textbf{Solution:} $H \rightarrow [(J \vee K) \wedge (\sim L)]$
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.48} Translate ``If $H$, then either both $J$ and $K$ or $L$'' into sentential logic.
+
+\doublespacing
+\textbf{Solution:} $H \rightarrow [(J \wedge K) \vee L]$
+
+\singlespacing
+\vspace{12pt}
+
+
+\vspace{12pt}
+
+In the following five exercises, identify each string of symbols as a sentence or as a nonsentence.  Give reasons justifying your answer.
+
+\vspace{12pt}
+
+\noindent\textbf{1.1.54} $\sim A\rightarrow B$
+
+\doublespacing
+\textbf{Solution:} Nonsentence due to no () around the $\sim A$. leaving ambiguity.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.55} $(\sim A)\rightarrow B$
+
+\doublespacing
+\textbf{Solution:} This is a sentence, all logic is sound and clear.
+
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.56} $\sim(A\rightarrow B)$
+
+\doublespacing
+\textbf{Solution:} This is a sentence, as the negation outside of the () leaves no ambiguity.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.57} $\sim\sim A\rightarrow\sim\sim A$
+
+\doublespacing
+\textbf{Solution:} This is a nonsentence as the double negations leave ambiguity as well as the sentence implies itself.
+
+\newpage
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.58} $(A\leftrightarrow A)\vee[\sim(B\wedge C)]$
+
+\doublespacing
+\textbf{Solution:} This is a sentence although the initial biconditional is unnecessary, it is still a valid sentence.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.1.64} State a natural language sentence with exactly five distinct interpretations.
+
+\doublespacing
+\textbf{Solution:} I will go to the beach with my friends Jack, Rick, and Jimmy, but I can't go to the beach if Jack and Rick don't come.
+
+
+\singlespacing
+\vspace{12pt}
+\newpage
+
+For the following three exercises, compute the truth table for each sentence and identify each sentence as a tuatology, a contradiction, or a contingency. \textit{Note: typing a table is a valuable skill.  In \LaTeX, you would use the ``tabular'' command.  It is pretty annoying to do a lot of them, though, so I recommend you use the ``vspace'' command to generate enough vertical space in your document to draw your tables by hand on a printed copy.}
+
+\vspace{12pt}
+
+\noindent\textbf{1.2.12} $(p\vee q)\wedge[(\sim p)\wedge(\sim q)]$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.14} $[q\leftrightarrow r]\leftrightarrow[(\sim q)\wedge r]$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.20} $\{p\rightarrow[q\wedge(\sim r)]\}\rightarrow[(\sim q)\rightarrow(\sim p)]$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\newpage
+
+In the following four exercises, determine if each pair of sentences is logically equivalent by computing the corresponding truth tables.  
+
+\vspace{12pt}
+
+\noindent\textbf{1.2.32} Distributivity: $p\vee(q\wedge r)$; $(p\vee q)\wedge(p\vee r)$
+
+\doublespacing
+\textbf{Solution:} 
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.35} Contrapositive: $p\rightarrow q$; $(\sim q)\rightarrow(\sim p)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.36} Inverse: $p\rightarrow q$; $(\sim p)\rightarrow(\sim q)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.38} Implication expansion: $p\rightarrow q$; $(\sim p)\vee q$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+
+\newpage
+
+For the following two exercises, compute the truth table for each sentence under the assumption that sentence symbol $A$ has truth value $T$ and sentence symbol $B$ has truth value $F$. 
+\textit{Note: typing a table is a valuable skill.  In \LaTeX, you would use the ``tabular'' command.  It is pretty annoying to do a lot of them, though, so I recommend you use the ``vspace'' command to generate enough vertical space in your document to draw your tables by hand on a printed copy.}
+
+\vspace{12pt}
+
+\noindent\textbf{1.2.50} $(B\wedge p)\rightarrow(\sim A)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.52} $(A\wedge p)\rightarrow(q\vee B)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+\singlespacing
+\vspace{12pt}
+
+
+\newpage
+
+ In exercises 58-62, consider the truth functional rendition of the basic truth tables. The basic truth tables can be thought of as defining functions on truth values as illustrated in the following two examples.
+ \begin{center}
+ \begin{tabular}{llll}
+ $ f_{\sim}(T)=F$ & $f_{\sim}(F)=T$\\
+$f_{\wedge}(T,T)=T$ & $f_{\wedge}(T,F)=F$ & $f_{\wedge}(F,T)=F$ & $f_{\wedge}(F,F)=F$
+\end{tabular}
+\end{center}
+
+In exercises 58-60, follow the model given for $f_{\sim}$ and $f_{\wedge}$ and define each truth function on the four distinct ordered pairs of $T$s and $F$s.
+
+\vspace{12pt}
+
+\noindent\textbf{1.2.58} $f_{\vee}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.59} $f_{\rightarrow}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.60} $f_{\leftrightarrow}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+In exercises 61-62, use the examples and your answers from the previous exercises to compute the value of each composite function.  Be sure to show all work.
+
+\vspace{12pt}
+
+\noindent\textbf{1.2.61} $f_{\wedge}(f_{\sim}(T),F)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.2.62} $f_{\leftrightarrow}(f_{\sim}(T),f_{\wedge}(T,T))$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+\singlespacing
+\vspace{12pt}
+
+
+\noindent\textbf{1.3.8} $\{\sim,\wedge,\vee,\rightarrow\}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.3.10} $\{\sim,\wedge\}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.3.12} $\{\sim,\rightarrow\}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\newpage
+
+In the following two exercises, identify a formal sentence logically equivalent to each sentence that uses only the connectives $\sim$ and $\wedge$.
+
+\vspace{12pt}
+
+\noindent\textbf{1.3.20} $(p\leftrightarrow q)\wedge(\sim p)$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.3.24} $(p\vee r)\leftrightarrow\{\sim[(\sim p)\wedge(\sim r)]\}$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+In the following two exercises, identify a formal sentence logically equivalent to each sentence that uses only the connectives $\sim$ and $\vee$.
+
+\vspace{12pt}
+
+\noindent\textbf{1.3.30} $\sim[(\sim p)\rightarrow p]$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+Identify a formal sentence satisfying the following truth table: 
+
+\noindent\textbf{1.3.42} 
+\begin{center}
+\begin{tabular}{c|c|c|c}
+$p$&$q$&$r$&?\\
+\hline
+T&T&T&F\\
+T&T&F&F\\
+T&F&T&F\\
+T&F&F&F\\
+F&T&T&T\\
+F&T&F&T\\
+F&F&T&F\\
+F&F&F&T
+\end{tabular}
+\end{center}
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\newpage
+
+\noindent\textbf{1.3.54} Using truth tables, verify the logical equivalence 
+\[(p\vee q)\equiv[(p\leftrightarrow q)\rightarrow q].\]
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+In the following three exercises, Identify the antecedent, the consequent, and the contrapositive of each implication.
+
+\vspace{12pt}
+
+\noindent\textbf{1.3.64} $q\wedge p$ when $p\wedge q$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.3.66} $(p\wedge q)\equiv p$ when the variable $q=T$
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+\singlespacing
+\vspace{12pt}
+
+\noindent\textbf{1.3.68} If $n\leq2$, then $n^2\leq 4$.
+
+\doublespacing
+\textbf{Solution:} Type your solution here.
+
+
+%
+%\newpage
+%
+%\begin{center}
+%\large{\textbf{Rewrite}}
+%\end{center}
+%
+%\noindent\textbf{X.Y.Z} 
+%
+%\doublespacing
+%\textbf{Solution:} 
+
+\end{document}
